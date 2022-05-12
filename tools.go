@@ -1,12 +1,12 @@
 package etcdtools
 
 import (
-    "context"
-    "fmt"
     clientv3 "go.etcd.io/etcd/client/v3"
-    "log"
-    "sync"
+    "context"
     "time"
+    "sync"
+    "log"
+    "fmt"
 )
 
 type Callback func(x, y interface{})
