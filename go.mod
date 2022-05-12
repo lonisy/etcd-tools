@@ -1,4 +1,4 @@
-module etcd-tools
+module github.com/lonisy/etcd-tools
 
 go 1.17
 
