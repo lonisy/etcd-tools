@@ -1,6 +1,10 @@
 # etcd-tools
 可用于服务配置数据的获取和热更新，从而实现依赖配置数据服务的热重载。
 
+## 安装
+```shell
+go get github.com/lonisy/etcd-tools
+```
 
 ## 概述
 
