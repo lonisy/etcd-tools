@@ -3,7 +3,7 @@
 
 ## 安装
 ```shell
-go get github.com/lonisy/etcd-tools
+go get github.com/lonisy/etcd-tools@v1.0.1
 ```
 
 ## 概述
