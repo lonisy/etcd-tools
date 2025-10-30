@@ -1,6 +1,6 @@
 module github.com/lonisy/etcd-tools
 
-go 1.17
+go 1.23.1
 
 require (
 	github.com/sirupsen/logrus v1.8.1
