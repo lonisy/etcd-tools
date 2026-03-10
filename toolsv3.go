@@ -59,8 +59,9 @@ func (t *TLSOptions) Build() (*tls.Config, error) {
     }
 
     tlsConfig := &tls.Config{
-        Certificates: []tls.Certificate{cert},
-        ServerName:   t.ServerName,
+        Certificates:       []tls.Certificate{cert},
+        ServerName:         t.ServerName,
+        InsecureSkipVerify: true,
     }
 
     // Load CA if provided
