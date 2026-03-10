@@ -30,13 +30,14 @@ func NewEtcdTools() *EtcdTools {
 
 // TLSOptions defines the configuration for TLS connection
 type TLSOptions struct {
-    CertFile   string `json:"cert_file"`
-    KeyFile    string `json:"key_file"`
-    CAFile     string `json:"ca_file"`
-    CertData   []byte `json:"cert_data"`
-    KeyData    []byte `json:"key_data"`
-    CAData     []byte `json:"ca_data"`
-    ServerName string `json:"server_name"`
+    CertFile           string `json:"cert_file"`
+    KeyFile            string `json:"key_file"`
+    CAFile             string `json:"ca_file"`
+    CertData           []byte `json:"cert_data"`
+    KeyData            []byte `json:"key_data"`
+    CAData             []byte `json:"ca_data"`
+    ServerName         string `json:"server_name"`
+    InsecureSkipVerify bool   `json:"insecure_skip_verify"`
 }
 
 // Build generates a tls.Config based on the provided TLSOptions.
@@ -61,7 +62,7 @@ func (t *TLSOptions) Build() (*tls.Config, error) {
     tlsConfig := &tls.Config{
         Certificates:       []tls.Certificate{cert},
         ServerName:         t.ServerName,
-        InsecureSkipVerify: true,
+        InsecureSkipVerify: t.InsecureSkipVerify,
     }
 
     // Load CA if provided
